@@ -7,10 +7,10 @@ const AddNotification = ({onPress, onChange, values}) => {
 	const [notifications, setNotifications] = useState([])
 	
 	const options = [
-		// {value: 1, label: "1 minutes before"},
-		// {value: 2, label: "2 minutes before"},
-		// {value: 3, label: "3 minutes before"},
-		// {value: 4, label: "4 minutes before"},
+		{value: 1, label: "1 minutes before"},
+		{value: 2, label: "2 minutes before"},
+		{value: 3, label: "3 minutes before"},
+		{value: 4, label: "4 minutes before"},
 		{value: 10, label: "10 minutes before"},
 		{value: 15, label: "15 minutes before"},
 		{value: 20, label: "20 minutes before"},
@@ -71,7 +71,7 @@ const AddNotification = ({onPress, onChange, values}) => {
 			
 			<div className="">
 				{notifications.map(notification=>(
-					<div className="flex items-center gap-x-2 notifications relative">
+					<div className="relative flex items-center gap-x-2 notifications">
 						
 						<Select
 							dropdownClass="-top-14 w-[180px]"
@@ -90,7 +90,7 @@ const AddNotification = ({onPress, onChange, values}) => {
 							)}
 							renderPlaceholderValue={()=>(
 								<div>
-									<div className="hover:bg-gray-100 rounded-md w-max flex items-center justify-between gap-x-1" >
+									<div className="flex items-center justify-between rounded-md hover:bg-gray-100 w-max gap-x-1" >
 										<h4 className="text-xs text-gray-600">{notification.label}</h4>
 										<BiChevronDown />
 									</div>
@@ -100,14 +100,14 @@ const AddNotification = ({onPress, onChange, values}) => {
 						>
 						</Select>
 						
-						<div onClick={()=>handleRemove(notification.id)} className="hover:bg-gray-100 px-2 rounded-md w-max notification-close">
-						<CgClose className="text-xs  " />
+						<div onClick={()=>handleRemove(notification.id)} className="px-2 rounded-md hover:bg-gray-100 w-max notification-close">
+						<CgClose className="text-xs " />
 					</div>
 					</div>
 				))}
 			</div>
 			
-			<div onClick={handleAddNewNotification} className="hover:bg-gray-100 p-2 rounded-md">
+			<div onClick={handleAddNewNotification} className="p-2 rounded-md hover:bg-gray-100">
 				<span className="text-sm text-gray-600">Add Notification</span>
 			</div>
 		</div>

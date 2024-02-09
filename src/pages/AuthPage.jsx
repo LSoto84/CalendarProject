@@ -25,12 +25,12 @@ const AuthPage = () => {
     return (
         <div>
             <div className="my-container">
-                <div className="flex justify-between py-3 px-3 border-b">
+                <div className="flex justify-between px-3 py-3 border-b">
 
                     <Link to="/">
                         <div className="flex items-center gap-x-1 ">
                             <img className="w-10"
-                                 src="https://ssl.gstatic.com/calendar/images/dynamiclogo_2020q4/calendar_16_2x.png"
+                                 src="https://inmigracionaldia.com/hubfs/raw_assets/public/website-theme/images/Logo-iad.svg"
                                  alt=""/>
                             <h4 className="text-sm font-bold">Calendar</h4>
                         </div>

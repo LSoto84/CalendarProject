@@ -20,6 +20,7 @@ import {RiseLoader} from "react-spinners";
 
 
 const BasicInfo = ({handleChange, setModalId, handleAddEvent, onClose}) => {
+
     const {
         newEventData: {
             invitations,
@@ -95,7 +96,7 @@ const BasicInfo = ({handleChange, setModalId, handleAddEvent, onClose}) => {
 
                 <div className="flex items-start mt-3 event-input-field">
                     <div className="w-12 event-label-icon">
-                        <img className="w-5" src="/icons/admin-icon.svg" alt="bell"/>
+                        <img className="w-5" src="/icons/color.svg" alt="color"/>
                     </div>
                     <ColorPicker createdBy={createdBy}
                                  updateEventId={updateEventId}
@@ -104,41 +105,44 @@ const BasicInfo = ({handleChange, setModalId, handleAddEvent, onClose}) => {
                                  onChange={(colorName) => handleChange(colorName, "eventColor")}/>
 
                 </div>
+                <div className='flex w-1/2 '>
 
-                <div className="flex items-start mt-3 event-input-field">
-                    <div className="w-12 event-label-icon">
-                        <img className="w-5" src="/icons/admin-icon.svg" alt="bell"/>
+                    <div className="flex items-start mt-3 event-input-field">
+                        <div className="w-12 event-label-icon">
+                            <img className="w-5" src="/icons/admin-icon.svg" alt="bell"/>
+                        </div>
+                        <LawyerPicker createdBy={createdBy}
+                            updateEventId={updateEventId}
+                            auth={authState?.auth || {}}
+                            value={eventLawyer}
+                            onChange={(selectedLawyer) => handleChange(selectedLawyer, "eventLawyer")}/>
+
                     </div>
-                    <LawyerPicker createdBy={createdBy}
-                        updateEventId={updateEventId}
-                        auth={authState?.auth || {}}
-                        value={eventLawyer}
-                        onChange={(selectedLawyer) => handleChange(selectedLawyer, "eventLawyer")}/>
 
+
+                    <div className="flex items-start mt-3 event-input-field">
+                        <div className="w-12 event-label-icon">
+                            {/* <img className="w-5" src="/icons/court-icon.svg" alt="court"/> */}
+                        </div>
+                        <CourtPicker createdBy={createdBy}
+                                    updateEventId={updateEventId}
+                                    auth={authState?.auth || {}}
+                                    value={eventCourt}
+                                    onChange={(selectedCourt) => handleChange(selectedCourt, "eventCourt")}/>
+                    </div>
                 </div>
 
-
-                <div className="flex items-start mt-3 event-input-field">
-                    <div className="w-12 event-label-icon">
-                        {/* <img className="w-5" src="/icons/court-icon.svg" alt="court"/> */}
+                    <div className="flex items-start mt-3 event-input-field">
+                        <div className="w-12 event-label-icon">
+                            {/* <img className="w-5" src="/icons/master-icon.svg" alt="master"/> */}
+                        </div>
+                        <MasterPicker createdBy={createdBy}
+                                    updateEventId={updateEventId}
+                                    auth={authState?.auth || {}}
+                                    value={eventMaster}
+                                    onChange={(selectedMaster) => handleChange(selectedMaster, "eventMaster")}/>
                     </div>
-                    <CourtPicker createdBy={createdBy}
-                                updateEventId={updateEventId}
-                                auth={authState?.auth || {}}
-                                value={eventCourt}
-                                onChange={(selectedCourt) => handleChange(selectedCourt, "eventCourt")}/>
-                </div>
 
-                <div className="flex items-start mt-3 event-input-field">
-                    <div className="w-12 event-label-icon">
-                        {/* <img className="w-5" src="/icons/master-icon.svg" alt="master"/> */}
-                    </div>
-                    <MasterPicker createdBy={createdBy}
-                                updateEventId={updateEventId}
-                                auth={authState?.auth || {}}
-                                value={eventMaster}
-                                onChange={(selectedMaster) => handleChange(selectedMaster, "eventMaster")}/>
-                </div>
 
 
 
@@ -271,7 +275,7 @@ const BasicInfo = ({handleChange, setModalId, handleAddEvent, onClose}) => {
                 {/*    </ClickExpand>*/}
                 {/*</div>*/}
 
-                {/* <div className="flex items-start event-input-field ">
+                 {/* <div className="flex items-start event-input-field ">
                     <div className="w-12 event-label-icon">
                         <img className="w-5" src="/icons/bell.svg" alt="bell"/>
                     </div>
@@ -286,7 +290,7 @@ const BasicInfo = ({handleChange, setModalId, handleAddEvent, onClose}) => {
                     </ClickExpand>
 
 
-                </div> */}
+                </div>  */}
 
                 <div className="mt-4">
                     <button onClick={handleSaveEvent} className={`btn ${isLoading ? "btn-disable" : "btn-primary"}`}>

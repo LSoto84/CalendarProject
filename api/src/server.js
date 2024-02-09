@@ -15,7 +15,7 @@ app.use(routes)
 
 
 app.get("/", (req, res)=>{
-	res.send("hi")
+	res.send("Servers is running... LSOTO")
 })
 
 
